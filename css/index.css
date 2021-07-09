@@ -1,0 +1,242 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+html{
+    --black:#171717;
+    --white:#F9F9F9;
+    --blue:rgb(5, 5, 251);
+    --gray:rgb(236, 234, 234);
+    --orange:#e74c3c;
+    --lightblue:rgb(85, 121, 240);
+}
+
+body{
+    
+    box-sizing: border-box;
+    background-color:var(--black);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.6;
+    word-spacing:0.6 ;
+}
+
+.container{
+    margin: 20px 200px; 
+    color: var(--white);
+}
+.flex-row,
+.flex-row-listCount{
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+p.heading{
+    font-size: 45px;
+    font-weight: bold;
+}
+.heading-thin{
+    font-weight: 100;
+    color: var(--gray);
+}
+
+.btn{
+    font-size: 26px;
+    cursor: pointer;
+}
+.btn i{
+    color: var(--blue);
+}  
+.flex-row-listCount p{
+    font-weight: 100;
+    font-size:35px;
+    color: var(--gray);
+}
+
+.activeBlur{
+    filter:blur(20px);
+    
+}
+
+
+/* ************ pop-up-card **************** */
+
+.add-card{
+    width: 447px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid var(--orange);
+    padding:30px;
+    text-align: center;
+    background-color: var(--white);
+    border-radius:20px ;
+} 
+.add-card p{
+    font-size: 23px;
+    color: var(--orange);
+    margin-bottom: 10px;
+}
+
+.add-card input{
+    display: block;
+    margin:0 auto;
+    width:347px;
+    height: 47px;
+    text-align: center;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    outline: none;
+}  
+.add-card button{
+    cursor: pointer;
+    margin-top:20px ;
+    width: 100px;
+    text-align: center;
+    border: none;
+    border-radius:20px ;
+    font-size: 30px;
+    padding: 5px 10px;
+    background-color:var(--orange);
+    color:var(--white);
+    margin-right:25px ;
+} 
+
+
+.add-card.active{
+    display: block;
+}
+
+
+
+/* list */
+
+.container-list{
+    margin: 20px 200px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
+.list-card{
+    height:377px;
+    width: 229px;
+    background-color: var(--white);
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--orange);
+    
+    position: relative;
+}    
+.list-card .list-card-heading{
+    padding:20px 0px;
+    font-size: 22px;
+    color: var(--orange);
+}
+.ml-list{
+    margin-bottom: 20px;
+}
+.ul-list{
+    display: flex;
+    flex-direction:column;
+    display: inline-block;
+   
+}
+
+.ul-list .list-item{
+    list-style: none;
+    display: inline-block;
+}
+.list-item.itemActive{
+    text-decoration: line-through;
+}
+
+.btn-mark-done{
+    background-color: var(--lightblue);
+    border: none;
+    padding:2px 10px;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.remover{
+    display: none;
+}
+
+
+.icon{
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+}
+
+.icon button{
+    background-color: transparent;
+    border: none;
+    margin-left:5px ;
+}
+.icon button i{
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.6s linear;
+}
+.icon button i:hover{
+    transform: scale(1.1,1.1);
+}
+#icon-red{
+    color: red;
+}
+.icon-blue{
+    color: var(--blue);
+}
+
+
+
+
+@media (max-width:500px) {
+    .container{
+        margin: 5px 20px 0px 20px;
+    }
+    p.heading{
+        font-size:39px ;
+    }
+    .addItem{
+        display:none;
+    }
+    .flex-row-listCount p{
+        font-size:25px;
+    }
+
+    .add-card{
+        width: 260px;
+    }
+    .add-card input{
+        width: 250px;
+        height: 39px;
+    }
+    .add-card button{
+        width: 70px;
+        font-size: 20px;
+    }
+
+    .container-list{
+        flex-direction: column;
+        margin:20px 5%;
+    }
+
+    .list-card{
+        width: 90%;
+        height: 89px;
+    }
+    .icon,.ml-list,.ul-list{
+        display: none;
+    }
+
+}
