@@ -30,6 +30,7 @@ body{
 .flex-row-listCount{
     margin: 30px 0px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +55,7 @@ p.heading{
 .flex-row-listCount p{
     font-weight: 100;
     font-size:35px;
-    color: var(--gray);
+   
 }
 
 .activeBlur{
@@ -117,22 +118,14 @@ p.heading{
 
 /* list */
 
-.container-list{
-    margin: 20px 200px; 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-
-}
 .list-card{
+    margin-bottom:20px ;
     height:377px;
     width: 229px;
     background-color: var(--white);
     text-align: center;
     border-radius: 10px;
     border: 1px solid var(--orange);
-    
     position: relative;
 }    
 .list-card .list-card-heading{
@@ -153,6 +146,7 @@ p.heading{
 .ul-list .list-item{
     list-style: none;
     display: inline-block;
+    color: var(--black);
 }
 .list-item.itemActive{
     text-decoration: line-through;
@@ -210,10 +204,6 @@ p.heading{
     .addItem{
         display:none;
     }
-    .flex-row-listCount p{
-        font-size:25px;
-    }
-
     .add-card{
         width: 260px;
     }
@@ -226,7 +216,7 @@ p.heading{
         font-size: 20px;
     }
 
-    .container-list{
+    .flex-row-listCount{
         flex-direction: column;
         margin:20px 5%;
     }
