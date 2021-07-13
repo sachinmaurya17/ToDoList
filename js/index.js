@@ -37,19 +37,20 @@ let displayCard = () =>{
     cardDisplay.removeChild(child);
     child = cardDisplay.lastElementChild;
     }
+    
     for(let i = 0 ;i < todoArray.length;i++){
         let node = document.createElement('div');
         node.setAttribute("class",`list-card`);
         node.setAttribute("data-key",todoArray[i].id);
-        node.innerHTML = `<p class="list-card-heading">${todoArray[i].heading}</p>
+        node.innerHTML = `<p class="list-card-heading" onclick="showCard(this)">${todoArray[i].heading}</p>
         <hr class="ml-list">
         <ul class="ul-list"> 
                 <button class="btn-mark-done">mark done</button><br>
         </ul>
         
         <div class="icon">
-                    <button class="delete-list-card"><i id="icon-red" class="fa fa-trash"></i></button>
-                    <button class="add-list-card"><i  class="icon-blue fa fa-plus-circle"></i></button>
+            <button class="delete-list-card"><i id="icon-red" class="fa fa-trash"></i></button>
+            <button class="add-list-card"><i  class="icon-blue fa fa-plus-circle"></i></button>
         </div>
         `
        cardDisplay.append(node);
@@ -69,14 +70,56 @@ let addToDo = () =>{
         todoArray.push(cardObj);
 
         console.log(todoArray);
+
+
+        
+
     }
-
-
     addCard.classList.remove('active');
     blurDiv.classList.remove('activeBlur');
-
+    
     displayCard();
+    
+    
 }
+
+// access the element 
+
+let currentTittleHeading = document.querySelector('#currentTittleHeading');
+
+let listCardHeading = document.querySelector('.list-card-heading');
+
+function showCard(element){
+
+    let id = element.parentNode.getAttribute("data-key");
+    
+    let currentItem;
+    for(let i = 0;i<todoArray.length;i++){
+        if(todoArray[i].id ==id){
+            currentItem = todoArray[i];
+        }   
+    }
+
+    console.log(currentItem);
+
+    document.querySelector('#blur').style.display ="none";
+
+    document.querySelector('#blur-2').style.display ="block";
+
+    currentTittleHeading.innerHTML = currentItem.heading;
+    listCardHeading.innerHTML = currentItem.heading;
+    console.log(listCardHeading);
+
+    
+
+
+}
+
+
+
+
+
+
 
 addListCard.addEventListener('click', addToDo);
 

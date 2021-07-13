@@ -41,8 +41,13 @@ p.heading{
     font-weight: bold;
 }
 .heading-thin{
+    font-size: 45px;
     font-weight: 100;
     color: var(--gray);
+}
+p.heading-thin i{
+    font-size: 30px;
+    padding-right: 20px;
 }
 
 .btn{
@@ -62,6 +67,8 @@ p.heading{
     filter:blur(20px);
     
 }
+
+
 
 
 /* ************ pop-up-card **************** */
@@ -118,7 +125,7 @@ p.heading{
 
 /* list */
 
-.list-card{
+.list-card,.card-2{
     margin-bottom:20px ;
     height:377px;
     width: 229px;
@@ -128,7 +135,7 @@ p.heading{
     border: 1px solid var(--orange);
     position: relative;
 }    
-.list-card .list-card-heading{
+.list-card-heading{
     padding:20px 0px;
     font-size: 22px;
     color: var(--orange);
@@ -193,6 +200,18 @@ p.heading{
 
 
 
+/* ******** ******* */
+
+#blur-2{
+    display: none;
+}
+
+.card-2{
+    margin: 0 auto;
+    
+}
+
+
 
 @media (max-width:500px) {
     .container{
@@ -200,6 +219,9 @@ p.heading{
     }
     p.heading{
         font-size:39px ;
+    }
+    #blur .heading-thin{
+        font-size: 39px;
     }
     .addItem{
         display:none;
@@ -225,8 +247,14 @@ p.heading{
         width: 90%;
         height: 89px;
     }
-    .icon,.ml-list,.ul-list{
+    .list-card .icon,.list-card .ml-list,.list-card .ul-list{
         display: none;
     }
-
+    .heading-thin{
+        font-size: 26px;
+    }
+    #currentTittleHeading{
+        font-size: 28px;
+    }
+    
 }
