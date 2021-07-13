@@ -110,8 +110,6 @@ function showCard(element){
     listCardHeading.innerHTML = currentItem.heading;
     console.log(listCardHeading);
 
-    
-
 
 }
 
